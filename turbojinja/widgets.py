@@ -15,7 +15,6 @@ class TurboJinja(object):
         else:
             self.options = dict()
 
-    @classmethod
     def load_template(self, template_name):
         """template_name == dotted.path.to.template (without .ext)
 
