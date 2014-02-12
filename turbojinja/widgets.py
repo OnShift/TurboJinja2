@@ -2,13 +2,7 @@
 from __future__ import absolute_import, division, print_function
 
 import os
-
-try:
-    import jinja2
-except:
-    print(("jinja2 not found. You should install"
-           " jinja2 first to use jinja template"))
-    raise
+import jinja2
 
 
 class TurboJinja(object):
@@ -22,7 +16,7 @@ class TurboJinja(object):
             self.options = dict()
 
     @classmethod
-    def load_template(cls, template_name):
+    def load_template(self, template_name):
         """template_name == dotted.path.to.template (without .ext)
 
         Searches for a template along the Python path.
@@ -40,7 +34,9 @@ class TurboJinja(object):
         template_loader = jinja2.FileSystemLoader(searchpath=templates_path)
         template_env = jinja2.Environment()
         template_env.loader = template_loader
-        template_obj = template_env.get_template('%s.html' % basename)
+        template_obj = template_env.get_template(
+            '%s.%s' % (basename, self.extension)
+        )
         return template_obj
 
     def render(self, info, format="html", fragment=False, template=None):
