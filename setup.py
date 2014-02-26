@@ -1,4 +1,6 @@
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages, dist
+
+dist.Distribution(dict(setup_requires='turbogears'))
 from turbogears.finddata import find_package_data
 
 import os
