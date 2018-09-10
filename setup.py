@@ -1,6 +1,4 @@
-from setuptools import setup, find_packages, dist
-
-dist.Distribution(dict(setup_requires='turbogears'))
+from setuptools import setup, find_packages
 
 import os
 execfile(os.path.join("turbojinja", "release.py"))
@@ -21,8 +19,6 @@ setup(
     install_requires=["Jinja2 >= 2.7"],
     zip_safe=False,
     packages=find_packages(where='turbojinja'),
-    #package_data=find_package_data(where='turbojinja',
-    #                              package='turbojinja'),
     keywords=[
         # Use keywords if you'll be adding your package to the
         # Python Cheeseshop
