@@ -21,7 +21,7 @@ setup(
 
     install_requires=["TurboGears == 1.0.11.10","Jinja2 >= 2.7"],
     zip_safe=False,
-    packages=find_packages(),
+    packages=find_packages(where='turbojinja'),
     #package_data=find_package_data(where='turbojinja',
     #                              package='turbojinja'),
     keywords=[
