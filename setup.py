@@ -19,7 +19,7 @@ setup(
     #download_url=download_url,
     license=license,
 
-    install_requires=["TurboGears >= 0.9", "Jinja2 >= 2.7"],
+    install_requires=["Jinja2 >= 2.7"],
     zip_safe=False,
     packages=find_packages(),
     package_data=find_package_data(where='turbojinja',
